@@ -1,28 +1,67 @@
-// Creating 2 random numbers
-var randomNumber1 = Math.floor(Math.random() * 6 + 1);
-var randomNumber2 = Math.floor(Math.random() * 6 + 1);
+// Detecting Button click via mouse
+var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
-// Creating a random image filepath for the first image
-var img1Path = "./images/dice6.png";
-var img1PathFrontPart = img1Path.slice(0, 13);
-var img1PathEndPart = img1Path.slice(14,18);
-img1Path = img1PathFrontPart + randomNumber1 + img1PathEndPart;
+for(var i = 0; i < numberOfDrumButtons; i++){
+    
+    document.querySelectorAll(".drum")[i].addEventListener("click", function (){        
+        var buttonInnerHTML = this.innerHTML;
+        makeSound(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
+    });
 
-// Creating a random image filepath for the second image
-var img2Path = "./images/dice6.png";
-var img2PathFrontPart = img2Path.slice(0, 13);
-var img2PathEndPart = img2Path.slice(14,18);
-img2Path = img2PathFrontPart + randomNumber2 + img2PathEndPart;
+}
 
-// Changing the image sources for both  the dice images
-document.querySelector(".img1").setAttribute("src", img1Path);
-document.querySelector(".img2").setAttribute("src", img2Path);
+// Detecting key press
+document.addEventListener("keydown", function(event){
+    makeSound(event.key);
+    buttonAnimation(key);
+});
 
-// Selecting a winner for the game
-if(randomNumber1 > randomNumber2){
-    document.querySelector("div h1").innerHTML = "🚩Player 1 Wins!";
-}else if(randomNumber1 < randomNumber2){
-    document.querySelector("div h1").innerHTML = "Player 2 Wins!🚩";
-}else{
-    document.querySelector("div h1").innerHTML = "🚩It's a Draw!🚩";
+function makeSound(key) {
+    switch (key) {
+        case "w":
+            var snare = new Audio("./sounds/snare.mp3");
+            snare.play();
+            break;
+        
+        case "a":
+            var tom1 = new Audio("./sounds/tom-1.mp3");
+            tom1.play();
+            break;
+
+        case "s":
+            var tom2 = new Audio("./sounds/tom-2.mp3");
+            tom2.play();
+            break;
+
+        case "d":
+            var tom3 = new Audio("./sounds/tom-3.mp3");
+            tom3.play();
+            break;
+
+        case "j":
+            var tom4 = new Audio("./sounds/tom-4.mp3");
+            tom4.play();
+            break;
+
+        case "k":
+            var kick = new Audio("./sounds/kick-bass.mp3");
+            kick.play();
+            break;
+
+        case "l":
+            var crash = new Audio("./sounds/crash.mp3");
+            crash.play();
+            break;            
+
+        default:
+            console.log(this.innerHTML);
+            break;
+    }
+}
+
+function buttonAnimation(currentKey) {
+    var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+    setTimeout(function () {activeButton.classList.remove("pressed");}, 100);
 }
