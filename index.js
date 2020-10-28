@@ -14,7 +14,7 @@ for(var i = 0; i < numberOfDrumButtons; i++){
 // Detecting key press
 document.addEventListener("keydown", function(event){
     makeSound(event.key);
-    buttonAnimation(key);
+    buttonAnimation(event.key);
 });
 
 function makeSound(key) {
