@@ -1,6 +1,6 @@
 # drumKit
 
-The [Drum Kit](https://davidjosephind.github.io/drumKit/) is one of the projects I have been working on as part of [The Complete 2020 Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/) course. It is a website that displays my learnings in the Advanced JavaScript and DOM Manipulation modules in the course. The skeleton project was provided by [The App Brewery](https://www.appbrewery.co/). I was responsible for writing the JavaScript for the project.
+The [Drum Kit](https://DEEJ4Y.github.io/drumKit/) is one of the projects I have been working on as part of [The Complete 2020 Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/) course. It is a website that displays my learnings in the Advanced JavaScript and DOM Manipulation modules in the course. The skeleton project was provided by [The App Brewery](https://www.appbrewery.co/). I was responsible for writing the JavaScript for the project.
 
 The goal of this project was to understand the working of Advanced JavaScript concepts and more DOM Manipulation in websites.
 
@@ -16,5 +16,5 @@ The goal of this project was to understand the working of Advanced JavaScript co
 - Understanding callback functions and responding to events in JavaScript
 - Adding simple animations to websites
 
-[Click Here](https://davidjosephind.github.io/drumKit/) to go to the website.
+[Click Here](https://DEEJ4Y.github.io/drumKit/) to go to the website.
 
